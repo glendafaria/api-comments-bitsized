@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const port = process.env.PORT || 3000
 
 app.use(express.json())
 
@@ -14,4 +15,6 @@ const commentRoutes = require('./routes/comment')
 
 app.use('/comment', commentRoutes)
 
-app.listen(process.env.PORT || 5000)
+app.listen(port, () => {
+    console.log("Servidor está rodando...")
+})
