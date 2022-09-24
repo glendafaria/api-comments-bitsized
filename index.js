@@ -14,6 +14,4 @@ const commentRoutes = require('./routes/comment')
 
 app.use('/comment', commentRoutes)
 
-app.listen(3001, () => {
-    console.log('Server running at port 3001')
-})
+app.listen(process.env.PORT || 5000)
