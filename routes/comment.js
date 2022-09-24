@@ -2,7 +2,7 @@ const router = require('express').Router()
 const Comment = require('../model/comment')
 
 //Retorna todos os comentários
-router.get('/', (req, res) => {
+router.get('/get', (req, res) => {
     Comment.find({}, (err, comments) => {
         if (err) return res.status(400).send(err)
 
