@@ -13,13 +13,16 @@ router.get('/get', (req, res) => {
 //Registra um novo comentário
 router.post('/add', (req, res) => {
     const { description, userName, idHistory } = { ...req.body }
+    const createDate = new Date();
 
     if ((description == null) || (userName == null) || (idHistory == null)) return res.status(400).send('Envie todos os dados corretamente')
+
 
     const comment = new Comment({
         description,
         userName,
-        idHistory
+        idHistory,
+        createDate
     })
 
     comment.save()

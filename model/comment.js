@@ -12,6 +12,10 @@ const commentSchema = mongoose.Schema({
     idHistory: {
         type: String,
         required: true
+    },
+    createDate: {
+        type: Date,
+        required: true
     }
 })
 
